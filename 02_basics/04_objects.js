@@ -75,7 +75,7 @@ const users = [
     {
         id: 1,
         email: "P@gmail.com",
-        
+
     },
     {
         id: 2,
@@ -99,4 +99,49 @@ const users = [
 // console.log(tinderUser.hasOwnProperty('isLoggedIn'))
 
 
-// 
+
+
+// object de-struture 
+
+const course = {
+    coursename: "javascript in hindi",
+    price: "999",
+    courceInstructor: "Hitesh"
+}
+// course.courceInstructor   // normal way of destructuing 
+
+const { courceInstructor } = course  // industry approach
+console.log(courceInstructor);
+
+
+// we can change access name of object in object destructuring  like here i changed courceinstructor name to sir in short form
+
+// const {courceInstructor: sir} = course
+// console.log(sir)
+
+
+
+// const navbar = ({company}) => {
+
+// }
+// navbar(company = "pradyuman")
+
+
+
+// JSON API intro
+
+
+// {
+//     name: "Pradyuman",
+//     courcename: "javascript in hindi",
+//     price: "999"
+// }
+
+//  api in array format
+// [
+//     {},
+//     {},
+//     {}
+// ]
+
+// online tools for understanding json api is jsonformatter
