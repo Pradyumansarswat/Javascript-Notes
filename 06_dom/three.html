@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PradyumanCodes</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+
+</body>
+
+<script>
+    const div = document.createElement('div')
+    //  const div = document.createElement('h1')
+    console.log(div)
+
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    // div.innerText = "PradyumanCodes"
+    const addtext = document.createTextNode("PradyumanCodes")
+div.appendChild(addtext)
+document.body.appendChild(div)
+
+</script>
+
+</html>
