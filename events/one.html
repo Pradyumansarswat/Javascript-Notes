@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="fullMoon"
+                    src="https://images.pexels.com/photos/884788/pexels-photo-884788.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="fullMoon"></li>
+            <li><img width="200px" id="city"
+                    src="https://images.pexels.com/photos/2360569/pexels-photo-2360569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="city"></li>
+            <li><img width="200px" id="snake"
+                    src="https://images.pexels.com/photos/1394938/pexels-photo-1394938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="snake"></li>
+            <li><img width="200px" id="home"
+                    src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="home"></li>
+            <li><img width="200px" id="OrangeRoseFlower"
+                    src="https://images.pexels.com/photos/39517/rose-flower-blossom-bloom-39517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="OrangeRoseFlower"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+</body>
+<script>
+    // lessuseful approach for this work
+    // document.getElementById('fullMoon').onclick = function (){
+    //     alert("fullMoon clicked")
+    // }
+
+
+    // better approach for this work
+
+
+    // attachEvent() => methode used in early time of internet
+
+    // what we should about events => type , timestamp, defaultPrevented,target, toElement, srcElement, current target
+    //client position related clientX,  clientY, screenX, screenY
+    // altkey, ctrlKet, shiftKey, KeyCode
+
+    // document.getElementById('fullMoon').addEventListener('click', function (e) {
+    //     console.log(e)
+    //     alert("fullmoon clicked")
+    // }, false)
+
+
+
+    // document.getElementById('images').addEventListener('click', function (e) {
+    //     console.log("clicked inside the ul")
+    // }, false)
+
+    // document.getElementById('fullMoon').addEventListener('click', function (e) {
+    //     console.log("clicked inside the fullMoon")
+    //     e.stopPropagation()  // by using this we can stop bubbling
+    // }, false)
+
+    // when we click on fullmoon then first event will be fullmoon than ul clicked cause by default it is fixed like bubble  goes from down to upper side like wise code runs from downside to upperside 
+
+    // but if we use third parameter true instead of false then it will go from upper side to downside 
+    // it depends on use cases which one we want to use 
+
+    // document.getElementById('google').addEventListener('click', function (e) {
+    //     e.preventDefault()
+    //     e.stopPropagation() 
+    //     console.log("google clicked")
+
+    // }, false)
+
+
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        // console.log("event")
+        // console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+
+        // removeIt.parentNode.removeChild(removeIt)
+
+    }, false)
+
+
+
+</script>
+
+</html>
